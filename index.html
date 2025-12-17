@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VIBE_OS</title>
+
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;700&display=swap" rel="stylesheet">
+
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://unpkg.com/three@0.160.0/build/three.module.js"
+    }
+  }
+  </script>
+</head>
+
+<body>
+
+  <div id="hud">
+    <div class="top">
+      <div class="panel logo">VIBE_OS</div>
+      <div class="panel" id="status">Loading…</div>
+    </div>
+
+    <div id="lyrics">Select a song</div>
+
+    <div class="bottom panel">
+      <div class="track">
+        <h2 id="track-name">No Track</h2>
+        <div id="time">0:00 / 0:00</div>
+        <div id="progress">
+          <div id="bar"></div>
+        </div>
+        <button id="loop">LOOP: OFF</button>
+      </div>
+
+      <div id="songList"></div>
+
+      <button id="play">PLAY / PAUSE</button>
+    </div>
+  </div>
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>
