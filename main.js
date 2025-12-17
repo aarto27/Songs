@@ -66,13 +66,15 @@ fetch("/songs")
 
 function playSong(index) {
   currentSongIndex = index;
-  audio.src = `songs/${songList[index]}`;
+  const song = songList[index];
+  audio.src = `songs/${song}`;
   audio.play();
   isPlaying = true;
   lyricIndex = 0;
-  trackName.innerText = songList[index];
+  trackName.innerText = song;
   lyricEl.innerText = lyrics[0].text;
 }
+
 
 document.getElementById("play").onclick = () => {
   if (!audio.src) return;
