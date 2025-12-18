@@ -1,13 +1,6 @@
 import * as THREE from "three";
 
-let songList = [
-  "Dil Ka Jo Haal Hai.mp3",
-  "Dildara.mp3",
-  "For A Reason.mp3",
-  "Raanjhanaa.mp3",
-  "Sau Rab Di.mp3"
-];
-
+let songList = [];
 let currentSongIndex = 0;
 let loop = false;
 let isPlaying = false;
@@ -72,21 +65,27 @@ const status = document.getElementById("status");
 const timeEl = document.getElementById("time");
 const bar = document.getElementById("bar");
 const loopBtn = document.getElementById("loop");
-
-status.innerText = "Songs Loaded";
-
 const list = document.getElementById("songList");
-songList.forEach((song, index) => {
-  const btn = document.createElement("button");
-  btn.textContent = song;
-  btn.onclick = () => playSong(index);
-  list.appendChild(btn);
-});
+
+fetch("/api/songs")
+  .then(res => res.json())
+  .then(songs => {
+    songList = songs;
+    status.innerText = "Songs Loaded";
+    list.innerHTML = "";
+
+    songs.forEach((song, index) => {
+      const btn = document.createElement("button");
+      btn.textContent = song;
+      btn.onclick = () => playSong(index);
+      list.appendChild(btn);
+    });
+  });
 
 function playSong(index) {
   currentSongIndex = index;
   const song = songList[index];
-  audio.src = `songs/${encodeURIComponent(song)}`;
+  audio.src = `/songs/${encodeURIComponent(song)}`;
   audio.play();
   isPlaying = true;
   lyricIndex = 0;
