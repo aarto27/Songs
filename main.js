@@ -1,11 +1,11 @@
 import * as THREE from "three";
 
 let songList = [
-  "A.R. Rahman - Raanjhanaa (Lyric Video) - SonyMusicIndiaVEVO.mp3",
   "Dil Ka Jo Haal Hai.mp3",
+  "Dildara.mp3",
   "For A Reason.mp3",
-  "Lyrical Video Dildara.mp3",
-  "Sau Rab Di - Abhijeet & Alka Yagnik - Best Bollywood Song - Shemaroo.mp3"
+  "Raanjhanaa.mp3",
+  "Sau Rab Di.mp3"
 ];
 
 let currentSongIndex = 0;
@@ -86,7 +86,7 @@ songList.forEach((song, index) => {
 function playSong(index) {
   currentSongIndex = index;
   const song = songList[index];
-  audio.src = `songs/${song}`;
+  audio.src = `songs/${encodeURIComponent(song)}`;
   audio.play();
   isPlaying = true;
   lyricIndex = 0;
