@@ -2,9 +2,9 @@ import * as THREE from "three";
 
 let songList = [
   "A.R. Rahman - Raanjhanaa (Lyric Video) - SonyMusicIndiaVEVO.mp3",
-  "Dil Ka Jo Haal Hai (Lyrical) Besharam Ranbir Kapoor Abhijeet Bhattacharya, Shreya Ghoshal - T-Series.mp3",
-  "For A Reason (Official Video) Karan Aujla Tania Ikky Latest Punjabi Songs 2025 - Rehaan Records.mp3",
-  "Lyrical Video Dildara Song Ra.One ShahRukh Khan, Kareena Kapoor - T-Series.mp3",
+  "Dil Ka Jo Haal Hai.mp3",
+  "For A Reason.mp3",
+  "Lyrical Video Dildara.mp3",
   "Sau Rab Di - Abhijeet & Alka Yagnik - Best Bollywood Song - Shemaroo.mp3"
 ];
 
